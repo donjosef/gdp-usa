@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     height: 100vh;
     margin: 0;
@@ -13,4 +17,16 @@ h1 {
 main {
     text-align: center;
     padding: 20px;
+}
+
+#tooltip {
+    position: absolute;
+    text-align: center;
+    width: 160px;
+    height: 60px;
+    padding: 10px;
+    background: rgb(209, 214, 219);
+    border-radius: 8px;
+    pointer-events: none;
+    color: #04002a;
 }
