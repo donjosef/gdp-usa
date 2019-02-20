@@ -14,7 +14,7 @@ const tooltip = d3
 
 d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json')
     .then(json => {
-        const { data, source_name } = json; //destructuring 
+        const { data, source_name, name } = json; //destructuring 
         console.log(json)
         const barWidth = (width - padding - padding) / data.length;
 
@@ -93,5 +93,12 @@ d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
             .attr('y', height)
             .text('Source: ' + source_name)
             .attr('fill', '#fff');
-        
+
+        chart
+            .append('text')
+            .attr('transform', 'rotate(-90)')
+            .attr('x', -320)
+            .attr('y', 80)
+            .text(name)
+            .attr('fill', '#fff')
     });
