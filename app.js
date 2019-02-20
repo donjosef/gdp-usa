@@ -8,5 +8,7 @@ const chart = d3.select('.chart')
 
     d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json')
     .then(json => {
-        const { data } = json; //destructuring        
+        const { data } = json; //destructuring 
+        const barWidth = (width - padding - padding) / data.length;
+       
     });
