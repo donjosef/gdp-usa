@@ -3,3 +3,9 @@ body {
     margin: 0;
     background: #04002a;
 }
+
+h1 {
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+}
