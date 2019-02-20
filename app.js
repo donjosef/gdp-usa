@@ -14,7 +14,8 @@ const tooltip = d3
 
 d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json')
     .then(json => {
-        const { data } = json; //destructuring 
+        const { data, source_name } = json; //destructuring 
+        console.log(json)
         const barWidth = (width - padding - padding) / data.length;
 
         const minDate = new Date(data[0][0]);
@@ -84,4 +85,13 @@ d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
             .style('color', '#fff')
             .style('font-size', '0.9rem')
             .call(yAxis);
+
+        /*--- LABELS ---*/
+        chart
+            .append('text')
+            .attr('x', width / 2 + 150)
+            .attr('y', height)
+            .text('Source: ' + source_name)
+            .attr('fill', '#fff');
+        
     });
