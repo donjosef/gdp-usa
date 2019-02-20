@@ -41,6 +41,29 @@ d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
             .attr('height', d => height - padding - yScale(d[1]))
             .attr('x', (d, i) => 1 + padding + (barWidth * i)) //1px offset to pass test n 10
             .attr('y', d => yScale(d[1]))
+            .on('mouseover', (d, i) => {
+                tooltip
+                    .attr('data-date', d[0]);
+
+                tooltip
+                    .transition()
+                    .duration(200)
+                    .style("opacity", .9);
+
+                tooltip
+                    .html(`
+                        <strong>${d[0]}</strong>
+                        <br />
+                        <strong>$ ${d[1]} BILLION</strong>`)
+                    .style("left", (d3.event.pageX + 5) + "px")
+                    .style("top", (d3.event.pageY - 60) + "px");
+            })
+            .on('mouseout', (d, i) => {
+                tooltip
+                    .transition()
+                    .duration(200)
+                    .style('opacity', 0);
+            })
 
         /*----- AXES ------*/
         const xAxis = d3.axisBottom(xScale);
