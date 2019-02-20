@@ -3,6 +3,7 @@
 }
 
 body {
+    font-family: 'Ubuntu', sans-serif;
     height: 100vh;
     margin: 0;
     background: #04002a;
