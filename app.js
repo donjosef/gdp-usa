@@ -22,4 +22,8 @@ d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
             .domain([0, d3.max(data, d => d[1])])
             .range([height - padding, padding]);
 
+        /*----- AXES ------*/
+        const xAxis = d3.axisBottom(xScale);
+        const yAxis = d3.axisLeft(yScale);
+
     });
