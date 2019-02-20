@@ -30,3 +30,7 @@ main {
     pointer-events: none;
     color: #04002a;
 }
+
+.bar:hover {
+    fill: #04002a;
+}
