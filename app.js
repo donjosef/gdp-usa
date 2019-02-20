@@ -26,4 +26,19 @@ d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/mas
         const xAxis = d3.axisBottom(xScale);
         const yAxis = d3.axisLeft(yScale);
 
+        chart
+            .append('g')
+            .attr('id', 'x-axis')
+            .attr('transform', `translate(0, ${height - padding})`)
+            .style('color', '#fff')
+            .style('font-size', '0.9rem')
+            .call(xAxis);
+
+        chart
+            .append('g')
+            .attr('id', 'y-axis')
+            .attr('transform', `translate(${padding}, 0)`)
+            .style('color', '#fff')
+            .style('font-size', '0.9rem')
+            .call(yAxis);
     });
