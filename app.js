@@ -6,6 +6,12 @@ const chart = d3.select('.chart')
     .attr('width', width)
     .attr('height', height);
 
+const tooltip = d3
+    .select("body")
+    .append("div")
+    .attr("id", "tooltip")
+    .style("opacity", 0);
+
 d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json')
     .then(json => {
         const { data } = json; //destructuring 
